@@ -3,6 +3,7 @@ package com.example.shoppingcart.di
 import android.content.Context
 import com.example.shoppingcart.di.modules.RoomModule
 import com.example.shoppingcart.di.modules.ViewModelModule
+import com.example.shoppingcart.productlist.MainActivity
 import com.example.shoppingcart.viewmodel.ViewModelBuilder
 import dagger.BindsInstance
 import dagger.Component
@@ -20,5 +21,5 @@ interface AppComponent {
         fun init(@BindsInstance context: Context): AppComponent
     }
 
-
+    fun inject(main: MainActivity)
 }

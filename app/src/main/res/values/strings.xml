@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ShoppingCart</string>
+
+    <string name="product_list_product_price">\u0024%d</string>
 </resources>

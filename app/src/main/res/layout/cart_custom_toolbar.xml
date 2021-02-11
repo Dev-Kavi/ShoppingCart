@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.shoppingcart.productlist.ProductListViewModel" />
+            type="com.example.shoppingcart.cart.CartViewModel" />
 
         <variable
             name="clickHandler"
@@ -19,17 +19,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:onClick="@{clickHandler::onClick}"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="Shop"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewBack"/>
 
         <ImageView
             android:id="@+id/imageViewCart"
@@ -37,7 +48,6 @@
             android:layout_height="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="36dp"
-            android:onClick="@{clickHandler::onClick}"
             android:src="@drawable/ic_shopping_cart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

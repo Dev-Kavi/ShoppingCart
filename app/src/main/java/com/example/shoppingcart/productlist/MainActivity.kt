@@ -7,13 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingcart.App
 import com.example.shoppingcart.R
 import com.example.shoppingcart.cart.CartActivity
 import com.example.shoppingcart.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_custom_toolbar.*
-import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -33,6 +32,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         LinearLayoutManager(this)
     }
 
+    private val recyclerView by lazy {
+        findViewById<RecyclerView>(R.id.recyclerViewProduct)
+    }
+
     var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +52,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when(v.id) {
+        when (v.id) {
             R.id.imageViewCart -> initCartScreen()
         }
     }
@@ -57,7 +60,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun observeViewModels() {
         viewModel._cartProducts.observe(this, { products ->
             products?.let {
-                recyclerViewProduct.layoutManager = layoutManager
+                recyclerView.layoutManager = layoutManager
                 adapter.setData(products as ArrayList<CartProductList>)
             }
         })

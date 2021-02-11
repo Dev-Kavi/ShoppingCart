@@ -25,7 +25,7 @@
             android:layout_margin="8dp"
             android:background="@drawable/custom_product_border"
             android:padding="16dp"
-            listImage="@{content.id}"
+            listImage="@{content}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="ContentDescription" />

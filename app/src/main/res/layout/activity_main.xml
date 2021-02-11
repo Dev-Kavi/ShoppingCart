@@ -1,47 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="viewModel"
             type="com.example.shoppingcart.productlist.ProductListViewModel" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp"
         tools:context=".productlist.MainActivity">
+
+        <include
+            android:id="@+id/layoutToolbar"
+            layout="@layout/main_custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:viewModel="@{viewModel}" />
 
         <TextView
             android:id="@+id/textViewProductTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_bold"
             android:text="Products"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:fontFamily="@font/montserrat_bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutToolbar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewProduct"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollViewMain"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            app:layout_constraintTop_toBottomOf="@id/textViewProductTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewProductTitle">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

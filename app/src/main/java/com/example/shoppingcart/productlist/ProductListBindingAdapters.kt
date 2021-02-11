@@ -7,8 +7,21 @@ import coil.api.load
 import com.example.shoppingcart.R
 
 @BindingAdapter("listImage")
-fun bindListImage(imageView: ImageView, id: String) {
-    imageView.load(setImage(id))
+fun bindListImage(imageView: ImageView, content: CartProductList) {
+    imageView.load(setImage(content.id))
+    imageView.setBackgroundResource(setBackgroundTint(content.bgColor))
+}
+
+fun setBackgroundTint(tint: String): Int {
+    var color = R.color.white
+    when (tint) {
+        "#F95A2C" -> color = R.color.product_background_a
+        "#00C6AE" -> color = R.color.product_background_b
+        "#FFBD12" -> color = R.color.product_background_c
+        "#FF89BB" -> color = R.color.product_background_d
+        "#1947E5" -> color = R.color.product_background_e
+    }
+    return color
 }
 
 fun setImage(id: String): Int {

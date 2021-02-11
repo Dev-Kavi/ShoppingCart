@@ -10,7 +10,7 @@ class ProductListViewModel @Inject constructor(
 ) : ViewModel() {
 
     val _products = repository.product
-    var _counter = MutableLiveData<Int>(1)
+    var _cartCounter = MutableLiveData<Int>(0)
 
     init {
         repository.initMockData()

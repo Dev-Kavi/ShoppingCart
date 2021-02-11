@@ -35,7 +35,7 @@ class ProductListRecyclerViewAdapter(
 
         fun setDataBinding(data: CartProductList) {
             binding.content = data
-            binding.layoutProduct.setOnClickListener { clickUser(data.id) }
+            binding.buttonAddProduct.setOnClickListener { clickUser(data.id) }
         }
     }
 

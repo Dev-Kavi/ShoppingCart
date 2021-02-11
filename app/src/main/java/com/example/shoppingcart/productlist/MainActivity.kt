@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         LinearLayoutManager(this)
     }
 
+    private var counter = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as App).initAppComponent().inject(this)
         super.onCreate(savedInstanceState)
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        viewModel._counter.observe(this, { count ->
+        viewModel._cartCounter.observe(this, { count ->
             count?.let {
                 if (count > 0) {
                     textViewCartCounter.visibility = View.VISIBLE
@@ -61,6 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun productOnClick(id: String) {
+        counter++
+        viewModel._cartCounter.value = counter
 
     }
 }

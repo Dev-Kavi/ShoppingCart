@@ -8,6 +8,10 @@
         <variable
             name="viewModel"
             type="com.example.shoppingcart.productlist.ProductListViewModel" />
+
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +29,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            bind:viewModel="@{viewModel}" />
+            bind:viewModel="@{viewModel}"
+            bind:clickHandler="@{clickHandler}"/>
 
         <TextView
             android:id="@+id/textViewProductTitle"

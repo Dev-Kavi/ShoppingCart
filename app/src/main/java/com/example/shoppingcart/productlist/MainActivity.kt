@@ -1,5 +1,6 @@
 package com.example.shoppingcart.productlist
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +9,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shoppingcart.App
 import com.example.shoppingcart.R
+import com.example.shoppingcart.cart.CartActivity
 import com.example.shoppingcart.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_custom_toolbar.*
 import timber.log.Timber
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -41,8 +43,15 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerViewProduct.adapter = adapter
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+        binding.clickHandler = this
         viewModel.deleteProduct()
         observeViewModels()
+    }
+
+    override fun onClick(v: View) {
+        when(v.id) {
+            R.id.imageViewCart -> initCartScreen()
+        }
     }
 
     private fun observeViewModels() {
@@ -67,5 +76,10 @@ class MainActivity : AppCompatActivity() {
         counter++
         viewModel._cartCounter.value = counter
         viewModel.insertProduct(data)
+    }
+
+    private fun initCartScreen() {
+        val intent = Intent(Intent(this, CartActivity::class.java))
+        startActivity(intent)
     }
 }

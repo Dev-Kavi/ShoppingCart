@@ -10,7 +10,7 @@ interface CartDao {
     fun getAllProduct(): LiveData<List<DatabaseProductsTable>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllProduct(list: List<DatabaseProductsTable>)
+    fun insertProduct(list: DatabaseProductsTable)
 }
 
 @Database(entities = [DatabaseProductsTable::class], version = 1, exportSchema = false)

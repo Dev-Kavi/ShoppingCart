@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingcart.databinding.ProductListItemLayoutBinding
 
 class ProductListRecyclerViewAdapter(
-    private val productOnClick: (String) -> Unit
+    private val productOnClick: (CartProductList) -> Unit
 ) : RecyclerView.Adapter<ProductListRecyclerViewAdapter.ProductViewHolder>() {
 
     private var list: ArrayList<CartProductList> = ArrayList()
@@ -18,13 +18,13 @@ class ProductListRecyclerViewAdapter(
 
     class ProductViewHolder(
         private val binding: ProductListItemLayoutBinding,
-        private val clickUser: (String) -> Unit
+        private val clickUser: (CartProductList) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
         companion object {
             fun from(
                 parent: ViewGroup,
-                clickProduct: (String) -> Unit
+                clickProduct: (CartProductList) -> Unit
             ): ProductViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ProductListItemLayoutBinding.inflate(layoutInflater, parent, false)
@@ -35,7 +35,7 @@ class ProductListRecyclerViewAdapter(
 
         fun setDataBinding(data: CartProductList) {
             binding.content = data
-            binding.buttonAddProduct.setOnClickListener { clickUser(data.id) }
+            binding.buttonAddProduct.setOnClickListener { clickUser(data) }
         }
     }
 

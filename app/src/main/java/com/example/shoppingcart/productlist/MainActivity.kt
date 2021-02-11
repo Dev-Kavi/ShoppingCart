@@ -11,6 +11,7 @@ import com.example.shoppingcart.R
 import com.example.shoppingcart.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_custom_toolbar.*
+import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         LinearLayoutManager(this)
     }
 
-    private var counter = 0
+    var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as App).initAppComponent().inject(this)
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModels() {
-        viewModel._products.observe(this, { products ->
+        viewModel._cartProducts.observe(this, { products ->
             products?.let {
                 recyclerViewProduct.layoutManager = layoutManager
                 adapter.setData(products as ArrayList<CartProductList>)
@@ -62,9 +63,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun productOnClick(id: String) {
+    private fun productOnClick(data: CartProductList) {
         counter++
         viewModel._cartCounter.value = counter
-
+        viewModel.insertProduct(data)
     }
 }

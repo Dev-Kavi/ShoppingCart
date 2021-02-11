@@ -10,14 +10,11 @@ data class CartProductList(
     var bgColor: String
 )
 
-fun List<CartProductList>.asDatabaseModel(): List<DatabaseProductsTable> {
-    return map {
-        DatabaseProductsTable(
-            id = it.id,
-            name = it.name,
-            category = it.category,
-            price = it.price,
-            bgColor = it.bgColor
-        )
-    }
-}
+fun CartProductList.asDatabaseModel(): DatabaseProductsTable =
+    DatabaseProductsTable(
+        id = id,
+        name = name,
+        category = category,
+        price = price,
+        bgColor = bgColor
+    )

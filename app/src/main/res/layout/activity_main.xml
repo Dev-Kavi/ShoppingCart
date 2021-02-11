@@ -40,12 +40,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutToolbar" />
 
+        <include
+            android:id="@+id/layoutFilter"
+            layout="@layout/product_list_filter_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textViewProductTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollViewMain"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewProductTitle">
+            app:layout_constraintTop_toBottomOf="@id/layoutFilter">
 
             <LinearLayout
                 android:layout_width="match_parent"

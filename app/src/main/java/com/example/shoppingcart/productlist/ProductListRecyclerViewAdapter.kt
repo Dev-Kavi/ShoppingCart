@@ -1,6 +1,7 @@
 package com.example.shoppingcart.productlist
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingcart.databinding.ProductListItemLayoutBinding
@@ -35,7 +36,10 @@ class ProductListRecyclerViewAdapter(
 
         fun setDataBinding(data: CartProductList) {
             binding.content = data
-            binding.buttonAddProduct.setOnClickListener { clickUser(data) }
+            binding.buttonAddProduct.setOnClickListener {
+                clickUser(data)
+                binding.buttonAddProduct.visibility = View.GONE
+            }
         }
     }
 

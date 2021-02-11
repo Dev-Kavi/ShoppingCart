@@ -11,6 +11,9 @@ interface CartDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertProduct(list: DatabaseProductsTable)
+
+    @Query("DELETE FROM product_table")
+    fun deleteProducts()
 }
 
 @Database(entities = [DatabaseProductsTable::class], version = 1, exportSchema = false)

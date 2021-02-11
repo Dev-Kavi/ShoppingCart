@@ -29,4 +29,8 @@ class ProductListViewModel @Inject constructor(
     fun insertProduct(data: CartProductList) {
         repository.insertCartProduct(data)
     }
+
+    fun deleteProduct() {
+        repository.dropTable()
+    }
 }

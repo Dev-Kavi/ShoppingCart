@@ -9,7 +9,6 @@ import com.example.shoppingcart.room.table.asDomainModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -27,9 +26,19 @@ class LocalRepository @Inject constructor(
         database.cartDao.insertProduct(list.asDatabaseModel())
     }
 
+    fun deleteData() {
+        database.cartDao.deleteProducts()
+    }
+
     fun insertCartProduct(data: CartProductList) {
         CoroutineScope(Dispatchers.IO).launch {
             insertData(data)
+        }
+    }
+
+    fun dropTable() {
+        CoroutineScope(Dispatchers.IO).launch {
+            deleteData()
         }
     }
 }

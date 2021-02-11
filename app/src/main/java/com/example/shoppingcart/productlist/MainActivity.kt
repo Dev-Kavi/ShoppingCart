@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerViewProduct.adapter = adapter
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
+        viewModel.deleteProduct()
         observeViewModels()
     }
 

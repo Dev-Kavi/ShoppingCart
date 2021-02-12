@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.shoppingcart.App
 import com.example.shoppingcart.R
 import com.example.shoppingcart.cart.fragments.CartFragment
+import com.example.shoppingcart.cart.fragments.OrderConfirmationFragment
 import com.example.shoppingcart.cart.fragments.PaymentFragment
 import com.example.shoppingcart.databinding.ActivityCartBinding
 import javax.inject.Inject
@@ -21,12 +22,20 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
         ViewModelProvider(this, factory).get(CartViewModel::class.java)
     }
 
+//    private val transaction by lazy {
+//
+//    }
+
     private val cartFragment by lazy {
         CartFragment()
     }
 
     private val paymentFragment by lazy {
         PaymentFragment()
+    }
+
+    private val confirmationFragment by lazy {
+        OrderConfirmationFragment()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,13 +48,18 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         binding.clickHandler = this
-        isCheckedOut()
+        initViews()
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.imageViewBack -> onBackPressed()
         }
+    }
+
+    private fun initViews() {
+        isCheckedOut()
+        isConfirmed()
     }
 
     private fun isCheckedOut() {
@@ -58,5 +72,15 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         })
+    }
+
+    private fun isConfirmed() {
+        viewModel._confirmed.observe(this, { confirmed -> confirmed?.let {
+            if (confirmed) {
+                val transaction = this.supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.frameLayoutCart, confirmationFragment)
+                transaction.commitAllowingStateLoss()
+            }
+        }})
     }
 }

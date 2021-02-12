@@ -16,6 +16,11 @@ fun bindCartProductTotal(textView: TextView, price: Int) {
     textView.text = textView.resources.getString(R.string.product_list_product_price, price)
 }
 
+@BindingAdapter("cartCheckoutTotal")
+fun bindCartCheckoutTotal(textView: TextView, price: Int) {
+    textView.text = textView.resources.getString(R.string.product_list_product_checkout_price, price)
+}
+
 @BindingAdapter("layoutBackground")
 fun bindLayoutBackground(layout: ConstraintLayout, color: String) {
     layout.setBackgroundResource(setBackgroundTint(color))

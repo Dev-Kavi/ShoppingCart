@@ -2,8 +2,9 @@ package com.example.shoppingcart.productlist
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.shoppingcart.repository.LocalRepository
-import timber.log.Timber
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class ProductListViewModel @Inject constructor(
@@ -27,10 +28,14 @@ class ProductListViewModel @Inject constructor(
     }
 
     fun insertProduct(data: CartProductList) {
-        repository.insertCartProduct(data)
+        viewModelScope.launch {
+            repository.insertCartProduct(data)
+        }
     }
 
     fun deleteProduct() {
-        repository.dropTable()
+        viewModelScope.launch {
+            repository.dropTable()
+        }
     }
 }

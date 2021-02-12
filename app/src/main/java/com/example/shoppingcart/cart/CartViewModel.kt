@@ -3,9 +3,11 @@ package com.example.shoppingcart.cart
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.shoppingcart.App
 import com.example.shoppingcart.productlist.CartProductList
 import com.example.shoppingcart.repository.LocalRepository
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class CartViewModel @Inject constructor(

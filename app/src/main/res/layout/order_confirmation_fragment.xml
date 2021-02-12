@@ -54,6 +54,7 @@
             android:backgroundTint="@color/black"
             android:text="Return to Products"
             android:textSize="18sp"
+            android:onClick="@{clickHandler::onClick}"
             android:fontFamily="@font/montserrat_bold"
             app:layout_constraintTop_toBottomOf="@id/layoutOrderNumber"
             app:layout_constraintStart_toStartOf="parent"

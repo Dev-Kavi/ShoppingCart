@@ -45,6 +45,7 @@ class OrderConfirmationFragment : Fragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
     }
 
     override fun onClick(v: View) {

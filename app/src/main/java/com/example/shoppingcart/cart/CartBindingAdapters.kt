@@ -27,8 +27,7 @@ fun bindLayoutBackground(layout: ConstraintLayout, color: String) {
 }
 
 @BindingAdapter("cartOrderNumber")
-fun bindCartOrderNumber(textView: TextView, i : Int) {
-    val number = (i..1000).random()
+fun bindCartOrderNumber(textView: TextView, number : Int) {
     textView.text = textView.resources.getString(R.string.cart_order_number, number)
 }
 

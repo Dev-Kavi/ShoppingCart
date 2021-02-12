@@ -22,19 +22,23 @@ class CartViewModel @Inject constructor(
 
 
     fun validateOrder(cart: List<CartProductList>) {
-        if (!cart.isNullOrEmpty()) {
-            _checkout.value = true
-        } else {
-            Toast.makeText(App.appContext, "Cart is empty", Toast.LENGTH_SHORT).show()
+        viewModelScope.launch {
+            if (!cart.isNullOrEmpty()) {
+                _checkout.value = true
+            } else {
+                Toast.makeText(App.appContext, "Cart is empty", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
     fun validatePayment(name: String?, email: String?, agree: Boolean) {
-        if (!name.isNullOrEmpty() && !email.isNullOrEmpty() && agree){
-            _cartCounter.value = 0
-            _confirmed.value = true
-        } else {
-            Toast.makeText(App.appContext, "Please supply needed validation", Toast.LENGTH_SHORT).show()
-        }
+       viewModelScope.launch {
+           if (!name.isNullOrEmpty() && !email.isNullOrEmpty() && agree){
+               _cartCounter.value = 0
+               _confirmed.value = true
+           } else {
+               Toast.makeText(App.appContext, "Please supply needed validation", Toast.LENGTH_SHORT).show()
+           }
+       }
     }
 }

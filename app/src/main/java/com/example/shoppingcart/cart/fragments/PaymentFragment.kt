@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.shoppingcart.App
 import com.example.shoppingcart.R
 import com.example.shoppingcart.cart.CartViewModel
-import com.example.shoppingcart.databinding.FragmentCartBinding
 import com.example.shoppingcart.databinding.FragmentPaymentBinding
 import kotlinx.android.synthetic.main.fragment_payment.*
 import javax.inject.Inject
@@ -52,6 +51,6 @@ class PaymentFragment : Fragment(), View.OnClickListener {
         val hasAgree = switchButton.isChecked
         val name = editTexName.text.toString()
         val email = editTexEmail.text.toString()
-        viewModel.validateOrder(name, email, hasAgree)
+        viewModel.validatePayment(name, email, hasAgree)
     }
 }

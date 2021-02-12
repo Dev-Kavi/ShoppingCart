@@ -15,8 +15,6 @@ import com.example.shoppingcart.cart.CartViewModel
 import com.example.shoppingcart.databinding.FragmentCartBinding
 import com.example.shoppingcart.productlist.CartProductList
 import kotlinx.android.synthetic.main.fragment_cart.*
-import kotlinx.android.synthetic.main.fragment_cart.view.*
-import timber.log.Timber
 import javax.inject.Inject
 
 class CartFragment : Fragment(), View.OnClickListener {
@@ -37,6 +35,8 @@ class CartFragment : Fragment(), View.OnClickListener {
     private val layoutManager by lazy {
         LinearLayoutManager(this.requireContext())
     }
+
+    val cartItem = ArrayList<CartProductList>()
 
     override fun onAttach(context: Context) {
         (requireActivity().application as App).initAppComponent().inject(this)
@@ -61,8 +61,8 @@ class CartFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when(v.id) {
-            R.id.buttonFragmentBuyNow -> viewModel._checkout.value = true
+        when (v.id) {
+            R.id.buttonFragmentBuyNow -> validateOrder()
         }
     }
 
@@ -70,13 +70,18 @@ class CartFragment : Fragment(), View.OnClickListener {
         viewModel._product.observe(viewLifecycleOwner, { product ->
             product?.let {
                 viewModel._total.value = product.map { it.price }.sum().toInt()
+                cartItem.addAll(product)
                 recyclerViewCart.layoutManager = layoutManager
                 adapter.setData(product as ArrayList<CartProductList>)
             }
         })
     }
 
-    private fun orderOnClick(data: CartProductList) {
+    private fun validateOrder() {
+        viewModel.validateOrder(cartItem)
+    }
 
+    private fun orderOnClick(data: CartProductList) {
+        //TODO ADD PRODUCT DELETION ON CART
     }
 }

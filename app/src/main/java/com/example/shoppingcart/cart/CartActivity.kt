@@ -5,12 +5,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shoppingcart.App
 import com.example.shoppingcart.R
+import com.example.shoppingcart.cart.fragments.CartFragment
+import com.example.shoppingcart.cart.fragments.PaymentFragment
 import com.example.shoppingcart.databinding.ActivityCartBinding
-import com.example.shoppingcart.productlist.CartProductList
-import kotlinx.android.synthetic.main.activity_cart.*
 import javax.inject.Inject
 
 class CartActivity : AppCompatActivity(), View.OnClickListener {
@@ -22,24 +21,25 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
         ViewModelProvider(this, factory).get(CartViewModel::class.java)
     }
 
-    private val adapter by lazy {
-        CartRecyclerViewAdapter(::orderOnClick)
+    private val cartFragment by lazy {
+        CartFragment()
     }
 
-    private val layoutManager by lazy {
-        LinearLayoutManager(this)
+    private val paymentFragment by lazy {
+        PaymentFragment()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as App).initAppComponent().inject(this)
         super.onCreate(savedInstanceState)
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayoutCart, cartFragment)
+            .commit()
         val binding =
             DataBindingUtil.setContentView<ActivityCartBinding>(this, R.layout.activity_cart)
-        binding.recyclerViewCart.adapter = adapter
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         binding.clickHandler = this
-        observeViewModel()
+        isCheckedOut()
     }
 
     override fun onClick(v: View) {
@@ -48,17 +48,15 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun observeViewModel() {
-        viewModel._product.observe(this, { list ->
-            list?.let {
-                viewModel._total.value = list.map { it.price }.sum().toInt()
-                recyclerViewCart.layoutManager = layoutManager
-                adapter.setData(list as ArrayList<CartProductList>)
+    private fun isCheckedOut() {
+        viewModel._checkout.observe(this, { checkout ->
+            checkout?.let {
+                if (checkout) {
+                    val transaction = this.supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.frameLayoutCart, paymentFragment)
+                    transaction.commit()
+                }
             }
         })
-    }
-
-    private fun orderOnClick(data: CartProductList) {
-
     }
 }

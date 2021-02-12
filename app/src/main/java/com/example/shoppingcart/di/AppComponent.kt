@@ -2,6 +2,7 @@ package com.example.shoppingcart.di
 
 import android.content.Context
 import com.example.shoppingcart.cart.CartActivity
+import com.example.shoppingcart.cart.fragments.CartFragment
 import com.example.shoppingcart.di.modules.RoomModule
 import com.example.shoppingcart.di.modules.ViewModelModule
 import com.example.shoppingcart.productlist.MainActivity
@@ -24,4 +25,5 @@ interface AppComponent {
 
     fun inject(main: MainActivity)
     fun inject(cart: CartActivity)
+    fun inject(fragmentCart: CartFragment)
 }

@@ -10,5 +10,6 @@ class CartViewModel @Inject constructor(
 ) : ViewModel() {
     val _total = MutableLiveData<Int>()
     val _product = repository.product
+    var _checkout = MutableLiveData<Boolean>(false)
 
 }

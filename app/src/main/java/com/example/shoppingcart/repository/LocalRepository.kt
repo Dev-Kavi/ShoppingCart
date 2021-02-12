@@ -21,11 +21,11 @@ class LocalRepository @Inject constructor(
             it.asDomainModel()
         }
 
-    fun insertData(list: CartProductList) {
+    private fun insertData(list: CartProductList) {
         database.cartDao.insertProduct(list.asDatabaseModel())
     }
 
-    fun deleteData() {
+    private fun deleteData() {
         database.cartDao.deleteProducts()
     }
 

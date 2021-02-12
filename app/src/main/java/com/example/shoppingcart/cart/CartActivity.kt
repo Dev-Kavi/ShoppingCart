@@ -11,6 +11,7 @@ import com.example.shoppingcart.cart.fragments.CartFragment
 import com.example.shoppingcart.cart.fragments.OrderConfirmationFragment
 import com.example.shoppingcart.cart.fragments.PaymentFragment
 import com.example.shoppingcart.databinding.ActivityCartBinding
+import kotlinx.android.synthetic.main.cart_custom_toolbar.*
 import javax.inject.Inject
 
 class CartActivity : AppCompatActivity(), View.OnClickListener {
@@ -21,10 +22,6 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
     private val viewModel by lazy {
         ViewModelProvider(this, factory).get(CartViewModel::class.java)
     }
-
-//    private val transaction by lazy {
-//
-//    }
 
     private val cartFragment by lazy {
         CartFragment()
@@ -58,11 +55,20 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initViews() {
-        isCheckedOut()
-        isConfirmed()
+        observeViewModel()
     }
 
-    private fun isCheckedOut() {
+    private fun observeViewModel() {
+        viewModel._cartCounter.observe(this, { count ->
+            count?.let {
+                if (count > 0) {
+                    textViewCartListCounter.visibility = View.VISIBLE
+                    textViewCartListCounter.text = count.toString()
+                } else {
+                    textViewCartListCounter.visibility = View.GONE
+                }
+            }
+        })
         viewModel._checkout.observe(this, { checkout ->
             checkout?.let {
                 if (checkout) {
@@ -72,15 +78,14 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         })
-    }
-
-    private fun isConfirmed() {
-        viewModel._confirmed.observe(this, { confirmed -> confirmed?.let {
-            if (confirmed) {
-                val transaction = this.supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frameLayoutCart, confirmationFragment)
-                transaction.commitAllowingStateLoss()
+        viewModel._confirmed.observe(this, { confirmed ->
+            confirmed?.let {
+                if (confirmed) {
+                    val transaction = this.supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.frameLayoutCart, confirmationFragment)
+                    transaction.commitAllowingStateLoss()
+                }
             }
-        }})
+        })
     }
 }

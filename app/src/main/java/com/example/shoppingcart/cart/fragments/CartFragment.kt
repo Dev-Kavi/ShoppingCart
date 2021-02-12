@@ -70,6 +70,7 @@ class CartFragment : Fragment(), View.OnClickListener {
         viewModel._product.observe(viewLifecycleOwner, { product ->
             product?.let {
                 viewModel._total.value = product.map { it.price }.sum().toInt()
+                viewModel._cartCounter.value = product.size
                 cartItem.addAll(product)
                 recyclerViewCart.layoutManager = layoutManager
                 adapter.setData(product as ArrayList<CartProductList>)

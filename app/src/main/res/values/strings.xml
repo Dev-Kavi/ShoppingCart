@@ -3,5 +3,6 @@
 
     <string name="product_list_product_price">\u0024%d</string>
     <string name="product_list_product_checkout_price">Pay \u0024%d</string>
+    <string name="cart_order_number">Your order ID is #%d</string>
 
 </resources>

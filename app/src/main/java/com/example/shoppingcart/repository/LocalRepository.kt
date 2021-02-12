@@ -16,7 +16,6 @@ import javax.inject.Singleton
 class LocalRepository @Inject constructor(
     private val database: CartDatabase
 ) {
-
     val product: LiveData<List<CartProductList>> =
         Transformations.map(database.cartDao.getAllProduct()) {
             it.asDomainModel()

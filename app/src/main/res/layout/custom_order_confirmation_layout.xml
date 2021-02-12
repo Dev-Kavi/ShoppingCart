@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_order_confirmation_background"
+    android:layout_margin="16dp">
+
+    <View
+        android:id="@+id/viewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/product_background_c"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imageViewIconStar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/custom_cart_counter"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_star_outline_24"
+        app:layout_constraintTop_toTopOf="@+id/viewBackground"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:padding="24dp"
+        android:text="Your order has been processed"
+        android:textSize="32sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_bold"
+        app:layout_constraintTop_toBottomOf="@id/viewBackground"
+        app:layout_constraintStart_toStartOf="@id/viewBackground"
+        app:layout_constraintEnd_toEndOf="@id/imageViewIconStar"/>
+
+    <TextView
+        android:id="@+id/textViewOrderNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="Your order ID is #100201"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_bold"
+        app:layout_constraintTop_toBottomOf="@id/textViewOrder"
+        app:layout_constraintStart_toStartOf="@id/viewBackground"
+        app:layout_constraintEnd_toEndOf="@id/imageViewIconStar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

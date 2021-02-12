@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.shoppingcart.App
+import com.example.shoppingcart.R
 import com.example.shoppingcart.productlist.CartProductList
 import com.example.shoppingcart.repository.LocalRepository
 import kotlinx.coroutines.launch
@@ -12,7 +13,7 @@ import javax.inject.Inject
 
 
 class CartViewModel @Inject constructor(
-    private val repository: LocalRepository
+    repository: LocalRepository
 ) : ViewModel() {
     val _orderNumber = (100..1000).random()
     val _total = MutableLiveData<Int>()
@@ -27,7 +28,11 @@ class CartViewModel @Inject constructor(
             if (!cart.isNullOrEmpty()) {
                 _checkout.value = true
             } else {
-                Toast.makeText(App.appContext, "Cart is empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    App.appContext,
+                    App.appContext.resources.getString(R.string.local_error_empty_cart),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
@@ -40,7 +45,7 @@ class CartViewModel @Inject constructor(
             } else {
                 Toast.makeText(
                     App.appContext,
-                    "Please supply needed validation",
+                    App.appContext.resources.getString(R.string.local_error_invalid_order),
                     Toast.LENGTH_SHORT
                 ).show()
             }

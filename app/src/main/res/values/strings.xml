@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">ShoppingCart</string>
 
+    <string name="local_error_empty_cart">Cart is empty</string>
+    <string name="local_error_invalid_order">Please supply needed validation</string>
+
     <string name="product_list_product_price">\u0024%d</string>
     <string name="product_list_product_checkout_price">Pay \u0024%d</string>
+
     <string name="cart_order_number">Your order ID is #%d</string>
 
 </resources>

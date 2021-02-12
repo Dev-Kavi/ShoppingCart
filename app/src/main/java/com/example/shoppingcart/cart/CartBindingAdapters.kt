@@ -18,7 +18,8 @@ fun bindCartProductTotal(textView: TextView, price: Int) {
 
 @BindingAdapter("cartCheckoutTotal")
 fun bindCartCheckoutTotal(textView: TextView, price: Int) {
-    textView.text = textView.resources.getString(R.string.product_list_product_checkout_price, price)
+    textView.text =
+        textView.resources.getString(R.string.product_list_product_checkout_price, price)
 }
 
 @BindingAdapter("layoutBackground")
@@ -27,7 +28,7 @@ fun bindLayoutBackground(layout: ConstraintLayout, color: String) {
 }
 
 @BindingAdapter("cartOrderNumber")
-fun bindCartOrderNumber(textView: TextView, number : Int) {
+fun bindCartOrderNumber(textView: TextView, number: Int) {
     textView.text = textView.resources.getString(R.string.cart_order_number, number)
 }
 

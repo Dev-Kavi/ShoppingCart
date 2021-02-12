@@ -13,8 +13,6 @@ import com.example.shoppingcart.R
 import com.example.shoppingcart.cart.CartViewModel
 import com.example.shoppingcart.databinding.OrderConfirmationFragmentBinding
 import com.example.shoppingcart.productlist.MainActivity
-import kotlinx.android.synthetic.main.cart_custom_toolbar.*
-import kotlinx.android.synthetic.main.order_confirmation_fragment.view.*
 import javax.inject.Inject
 
 class OrderConfirmationFragment : Fragment(), View.OnClickListener {
@@ -49,7 +47,7 @@ class OrderConfirmationFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when(v.id) {
+        when (v.id) {
             R.id.buttonReturnToProducts -> initProductScreen()
         }
     }

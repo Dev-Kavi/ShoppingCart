@@ -36,7 +36,7 @@ class CartFragment : Fragment(), View.OnClickListener {
         LinearLayoutManager(this.requireContext())
     }
 
-    val cartItem = ArrayList<CartProductList>()
+    private val cartItem = ArrayList<CartProductList>()
 
     override fun onAttach(context: Context) {
         (requireActivity().application as App).initAppComponent().inject(this)

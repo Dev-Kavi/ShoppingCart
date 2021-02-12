@@ -1,17 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ShoppingCart</string>
-
-    <string name="local_error_empty_cart">Cart is empty</string>
-    <string name="local_error_invalid_order">Please supply needed validation</string>
-
-    <string name="product_list_product_price">\u0024%d</string>
-    <string name="product_list_product_checkout_price">Pay \u0024%d</string>
-
-    <string name="cart_order_number">Your order ID is #%d</string>
     <string name="main_products_text">Products</string>
     <string name="cart_toolbar_shop">Shop</string>
-    <string name="order_confirmation_your_order_has_been_processed">Your order has been processed</string>
-    <string name="fragment_cart_buy_now">Buy Now</string>
     <string name="fragment_payment_checkout">Checkout</string>
     <string name="fragment_payment_your_name">Your name</string>
     <string name="fragment_payment_your_email">Your email</string>
@@ -24,5 +14,4 @@
     <string name="product_list_blazers">Blazers</string>
     <string name="product_list_tees">Tees</string>
     <string name="product_list_item_add">Add</string>
-
 </resources>

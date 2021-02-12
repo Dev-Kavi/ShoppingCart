@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="activity_cart_framelayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="activity_main_product_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="activity_main_nested_scroll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="cart_toolbar_back_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="cart_toolbar_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="cart_toolbar_cart_image">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginEnd">36dp</item>
+    </style>
+
+    <style name="cart_toolbar_cart_counter">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@drawable/custom_cart_counter</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="cart_toolbar_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="cart_list_item_product_name">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">18dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="cart_list_item_product_price">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">18dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="cart_list_item_cancel_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@drawable/custom_cart_counter</item>
+    </style>
+
+    <style name="order_confirmation_background_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@color/product_background_c</item>
+    </style>
+
+    <style name="order_confirmation_star_icon">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_marginTop">70dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:background">@drawable/custom_cart_counter</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="order_confirmation_confirmation_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">48dp</item>
+        <item name="android:padding">24dp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="order_confirmation_order_number">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="fragment_cart_nested_scroll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="fragment_cart_total_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="fragment_cart_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">12dp</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_keyboard_arrow_right_24</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="fragment_payment_checkout_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">18dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="fragment_payment_name_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="fragment_payment_name">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">18dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">18dp</item>
+        <item name="android:background">@drawable/custom_sorting_button</item>
+    </style>
+
+    <style name="fragment_payment_email_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="fragment_payment_email">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">18dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">18dp</item>
+        <item name="android:background">@drawable/custom_sorting_button</item>
+    </style>
+
+    <style name="fragment_payment_switch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginStart">32dp</item>
+    </style>
+
+    <style name="fragment_payment_agreement">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="fragment_payment_payout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">18dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">18dp</item>
+        <item name="android:backgroundTint">@color/product_background_e</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="main_toolbar_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">36dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="main_toolbar_cart">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginEnd">36dp</item>
+    </style>
+
+    <style name="main_toolbar_counter">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@drawable/custom_cart_counter</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="main_toolbar_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="confirmation_fragment_confirmation_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">18dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="confirmation_fragment_button_return">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">24dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="product_list_filter_text_all">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/custom_sorting_button</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="product_list_filter_text_jackets">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/custom_sorting_button</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="product_list_filter_text_blazzers">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/custom_sorting_button</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="product_list_filter_text_tees">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/custom_sorting_button</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="product_list_item_product_image">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@drawable/custom_product_border</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="product_list_item_product_category">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="product_list_item_product_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="product_list_item_product_price">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="product_list_item_product_button_add">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableEnd">@drawable/ic_baseline_add_24</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="product_list_item_product_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@color/black</item>
+    </style>
+</resources>

@@ -13,58 +13,38 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_order_confirmation_background"
-        android:layout_margin="16dp">
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_order_confirmation_background">
 
         <View
             android:id="@+id/viewBackground"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/product_background_c"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/order_confirmation_background_view"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageViewIconStar"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="24dp"
-            android:background="@drawable/custom_cart_counter"
-            android:padding="8dp"
+            style="@style/order_confirmation_star_icon"
             android:src="@drawable/ic_baseline_star_outline_24"
-            app:layout_constraintTop_toTopOf="@+id/viewBackground"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewBackground" />
 
         <TextView
             android:id="@+id/textViewOrder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:padding="24dp"
-            android:text="Your order has been processed"
-            android:textSize="32sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/montserrat_bold"
-            app:layout_constraintTop_toBottomOf="@id/viewBackground"
+            style="@style/order_confirmation_confirmation_text"
+            android:text="@string/order_confirmation_your_order_has_been_processed"
+            app:layout_constraintEnd_toEndOf="@id/imageViewIconStar"
             app:layout_constraintStart_toStartOf="@id/viewBackground"
-            app:layout_constraintEnd_toEndOf="@id/imageViewIconStar" />
+            app:layout_constraintTop_toBottomOf="@id/viewBackground" />
 
         <TextView
             android:id="@+id/textViewOrderNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
+            style="@style/order_confirmation_order_number"
             cartOrderNumber="@{viewModel._orderNumber}"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/montserrat_bold"
-            app:layout_constraintTop_toBottomOf="@id/textViewOrder"
+            app:layout_constraintEnd_toEndOf="@id/imageViewIconStar"
             app:layout_constraintStart_toStartOf="@id/viewBackground"
-            app:layout_constraintEnd_toEndOf="@id/imageViewIconStar" />
+            app:layout_constraintTop_toBottomOf="@id/textViewOrder" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

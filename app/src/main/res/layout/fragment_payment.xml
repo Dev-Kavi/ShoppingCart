@@ -22,101 +22,58 @@
 
         <TextView
             android:id="@+id/textViewCheckoutText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="18dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Checkout"
-            android:textColor="@color/black"
-            android:textSize="24sp"
+            style="@style/fragment_payment_checkout_text"
+            android:text="@string/fragment_payment_checkout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewNameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Your name"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            style="@style/fragment_payment_name_title"
+            android:text="@string/fragment_payment_your_name"
             app:layout_constraintStart_toStartOf="@id/textViewCheckoutText"
             app:layout_constraintTop_toBottomOf="@id/textViewCheckoutText" />
 
         <EditText
             android:id="@+id/editTexName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="18dp"
-            android:background="@drawable/custom_sorting_button"
+            style="@style/fragment_payment_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textViewNameText" />
 
         <TextView
             android:id="@+id/textViewEmailText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Your email"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            style="@style/fragment_payment_email_title"
+            android:text="@string/fragment_payment_your_email"
             app:layout_constraintStart_toStartOf="@id/editTexName"
             app:layout_constraintTop_toBottomOf="@id/editTexName" />
 
         <EditText
             android:id="@+id/editTexEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="18dp"
-            android:background="@drawable/custom_sorting_button"
+            style="@style/fragment_payment_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textViewEmailText" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="32dp"
+            style="@style/fragment_payment_switch"
             app:layout_constraintLeft_toLeftOf="@id/editTexEmail"
             app:layout_constraintRight_toLeftOf="@id/textViewAgreement"
             app:layout_constraintTop_toBottomOf="@id/editTexEmail" />
 
         <TextView
             android:id="@+id/textViewAgreement"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="12dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="I agree to the terms and conditions"
-            android:textColor="@color/black"
-            android:textSize="14sp"
+            style="@style/fragment_payment_agreement"
+            android:text="@string/fragment_payment_i_agree_to_the_terms_and_conditions"
             app:layout_constraintLeft_toRightOf="@id/switchButton"
             app:layout_constraintRight_toRightOf="@id/editTexEmail"
             app:layout_constraintTop_toBottomOf="@id/editTexEmail" />
 
         <Button
             android:id="@+id/buttonPayout"
+            style="@style/fragment_payment_payout"
             cartCheckoutTotal="@{viewModel._total}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="18dp"
-            android:backgroundTint="@color/product_background_e"
-            android:fontFamily="@font/montserrat_bold"
-            android:padding="12dp"
-            android:textColor="@color/white"
-            android:textSize="18sp"
             android:onClick="@{clickHandler::onClick}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

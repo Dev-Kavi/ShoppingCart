@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.shoppingcart.productlist.ProductListViewModel" />
@@ -29,19 +30,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            bind:viewModel="@{viewModel}"
-            bind:clickHandler="@{clickHandler}"/>
+            bind:clickHandler="@{clickHandler}"
+            bind:viewModel="@{viewModel}" />
 
         <TextView
             android:id="@+id/textViewProductTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Products"
-            android:textColor="@color/black"
-            android:textSize="24sp"
+            style="@style/activity_main_product_text"
+            android:text="@string/main_products_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutToolbar" />
 
@@ -50,19 +45,16 @@
             layout="@layout/product_list_filter_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/textViewProductTitle"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/textViewProductTitle" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollViewMain"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            style="@style/activity_main_nested_scroll"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutFilter">
 
             <LinearLayout

@@ -1,68 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textViewAll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="4dp"
-        android:background="@drawable/custom_sorting_button"
-        android:text="All"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintTop_toTopOf="parent"
+        style="@style/product_list_filter_text_all"
+        android:text="@string/product_list_all"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/textViewJackets"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewJackets"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="4dp"
-        android:background="@drawable/custom_sorting_button"
-        android:text="Jackets"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintTop_toTopOf="parent"
+        style="@style/product_list_filter_text_jackets"
+        android:text="@string/product_list_jackets"
         app:layout_constraintLeft_toRightOf="@id/textViewAll"
-        app:layout_constraintRight_toLeftOf="@id/textViewBlazers"/>
+        app:layout_constraintRight_toLeftOf="@id/textViewBlazers"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewBlazers"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="4dp"
-        android:background="@drawable/custom_sorting_button"
-        android:text="Blazers"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintTop_toTopOf="parent"
+        style="@style/product_list_filter_text_blazzers"
+        android:text="@string/product_list_blazers"
         app:layout_constraintLeft_toRightOf="@id/textViewJackets"
-        app:layout_constraintRight_toLeftOf="@id/textViewTees"/>
+        app:layout_constraintRight_toLeftOf="@id/textViewTees"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewTees"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_margin="4dp"
-        android:background="@drawable/custom_sorting_button"
-        android:text="Tees"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintTop_toTopOf="parent"
+        style="@style/product_list_filter_text_tees"
+        android:text="@string/product_list_tees"
+        app:layout_constraintLeft_toRightOf="@id/textViewBlazers"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/textViewBlazers"/>
-
-
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
